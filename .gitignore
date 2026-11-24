@@ -1,0 +1,16 @@
+# Keep credentials private
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+**/node_modules/
+**/__pycache__/
+**/.venv/
+
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+node_modules/
+**/node_modules/
+__pycache__/

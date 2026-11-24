@@ -1,0 +1,9 @@
+**/node_modules
+**/__pycache__
+**/dist
+**/.git
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.zip

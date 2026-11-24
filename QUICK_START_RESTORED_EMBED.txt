@@ -1,0 +1,16 @@
+CASELAB v2.16 — FASTEST RESTORE OF THE WORKING AVATAR
+
+This build preserves the React 5-stage design but restores the exact LiveAvatar hosted endpoint previously used in CaseLab v1.5: POST https://api.liveavatar.com/v2/embeddings.
+
+1. Extract this ZIP into a NEW folder.
+2. Copy YOUR existing .env (secret credentials) from your v2.15 project into the root of this new project. Do not upload .env to GitHub or share it.
+3. VS Code Terminal 1 from the root: python -m uvicorn server:app --host 127.0.0.1 --port 8765
+4. VS Code Terminal 2: cd live-client ; npm.cmd install ; npm.cmd run dev
+5. Open the Local URL that Vite displays, proceed to Stage 4, enter demo passcode, Start Alex consultation, then click Chat now inside the embedded video.
+
+IMPORTANT LIMITS:
+- This version does NOT use React LiveAvatar SDK; it restores the previous hosted method.
+- LiveAvatar's hosted interface owns its microphone controls. React's hold-to-talk controls do not control the embed.
+- The hosted embed does NOT automatically provide a transcript to CaseLab Stage 5. The prior /api/live/review endpoint needs a session ID and authorization from the SDK flow, so the AI feedback stage cannot automatically assess this hosted call.
+- Session duration is a request, not a guarantee: LiveAvatar plan limits apply.
+- Don't deploy over the current public Streamlit app yet. This combined FastAPI+React build is for separate hosting.

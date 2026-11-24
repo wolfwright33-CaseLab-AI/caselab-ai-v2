@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: caselab-ai-v2
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    autoDeployTrigger: off
+    envVars:
+      - key: CASELAB_DEMO_PASSCODE
+        sync: false
+      - key: LIVEAVATAR_API_KEY
+        sync: false
+      - key: LIVEAVATAR_AVATAR_ID
+        sync: false
+      - key: LIVEAVATAR_CONTEXT_ID
+        sync: false
+      - key: LIVEAVATAR_VOICE_ID
+        sync: false
+      - key: SARAH_AVATAR_ID
+        sync: false
+      - key: SARAH_CONTEXT_ID
+        sync: false
+      - key: SARAH_VOICE_ID
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_FEEDBACK_MODEL
+        value: gpt-4o-mini
+      - key: LIVEAVATAR_MAX_SECONDS
+        value: '600'
+      - key: MAX_DEMO_SESSIONS
+        value: '10'
